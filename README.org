@@ -1,0 +1,3 @@
+* forth-assignment
+
+just source code for assignment forth tutorial on [[https://www.complang.tuwien.ac.at/forth/gforth/Docs-html/index.html][Gforth manual]]
