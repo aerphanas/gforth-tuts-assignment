@@ -29,10 +29,9 @@
   then ;
 
 \ Assignment: Write min without else-part (hint: what's the definition of nip?). 
-\ TODO: update
 : min ( n1 n2 -- n )
-  2dup < if
-    drop
-  else
-    swap drop
-  then ;
+  2dup > if
+    swap
+  then
+  drop ;
+
