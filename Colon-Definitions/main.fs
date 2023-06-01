@@ -1,7 +1,7 @@
 \ similar to procedures and function in other programming language
 
 : squared ( n -- n^2 )
-  dup * ;
+  { a } a a * ;
 
 5 squared .
 7 squared .
@@ -10,7 +10,7 @@
 \ including using it in other definitions: 
 
 : cubed ( n -- n^3 )
-  dup squared * ;
+  { a } a a squared * ;
 
 -5 cubed .
 
@@ -26,14 +26,14 @@
 
 \ Ans for nip
 \ nip -- remove second item from top stack
-: renip ( w1 w2 w3 -- w1 w3 )
-  swap drop ;
+: Renip ( w1 w2 w3 -- w1 w3 )
+  { a b c } a c ;
 
 \ Ans for tuck
 \ tuck -- inserts copy top item in stack below second item from top, shifting other items up 1 2 3 4 -> 1 2 4 3 4
 
 : retuck ( w1 w2 -- w2 w1 w2 )
-  swap over ;
+  { a b } b a b ;
 
 \ Ans for negate
 \ negate - change num to negative or vice versa
@@ -43,6 +43,4 @@
 \ Ans for /mod
 \ /mod perform division and modulus
 : redivmod ( n1 n2 -- n1/n2 n1%n2 )
-  tuck over swap /
-  swap rot mod
-  swap ;
+  { a b } a b / a b mod ;
