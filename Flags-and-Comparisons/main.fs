@@ -22,5 +22,6 @@
 
 \ Assignment: Write min without if.
 
+\ Ans
 : min ( n1 n2 -- n)
-  2dup + swap rot swap - abs -  2 / ;
+  2dup + rot rot - abs -  2 / ;
